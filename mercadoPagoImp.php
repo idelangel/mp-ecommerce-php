@@ -137,7 +137,7 @@
                             if(isset($_POST)){
                                 require __DIR__ .  '/vendor/autoload.php';
                                 // Agrega credenciales
-                                MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN');
+                                MercadoPago\SDK::setAccessToken('TEST-6668103652013722-112616-1c1e5389529bbb4fc67b1693592baf37-197699043');
                                 // Crea un objeto de preferencia
                                 $preference = new MercadoPago\Preference();
                                 // Crea un ítem en la preferencia
