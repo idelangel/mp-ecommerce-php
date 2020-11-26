@@ -100,12 +100,12 @@
                                         <h3>Precio: $<?php echo $_POST['price'] ?></h3>
                                         <h3>Cantidad: <?php echo  $_POST['unit'] ?></h3>
                                     </div>
-                                    <form>
+                                    <form action="mercadoPagoImp.php"  method="post" >
                                         <input type="hidden" name="title" value="<?php echo $_POST['title'] ?>">
                                         <input type="hidden" name="price" value="<?php echo $_POST['price'] ?>">
                                         <input type="hidden" name="unit" value="<?php echo $_POST['unit'] ?>">
-                                        <button type="submit" method="post" action="mercadoPagoImp.php" class="mercadopago-button" formmethod="post">Pagar</button>
                                     </form>                        
+                                    <button type="submit"  class="mercadopago-button">Pagar</button>
                                 </div>
                             </div>
                         </div>
