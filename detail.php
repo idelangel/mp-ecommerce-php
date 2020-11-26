@@ -104,8 +104,9 @@
                                         <input type="hidden" name="title" value="<?php echo $_POST['title'] ?>">
                                         <input type="hidden" name="price" value="<?php echo $_POST['price'] ?>">
                                         <input type="hidden" name="unit" value="<?php echo $_POST['unit'] ?>">
+                                        <button type="submit"  class="mercadopago-button">Pagar</button>
                                     </form>                        
-                                    <button type="submit"  class="mercadopago-button">Pagar</button>
+                                    
                                 </div>
                             </div>
                         </div>
