@@ -126,13 +126,35 @@
                                 <div class="as-accessories-filter-tile column large-6 small-3">
                                     <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                         <h2 class=" as-filter-button-text">
-                                            Smartphones
+                                            Revisa tu Pedido
                                         </h2>
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div class="as-accessories-results  as-search-desktop">    
+                            <div class="width:60%">
+                                <div class="as-producttile-info" style="float:left;min-height: 168px;">
+                                    <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
+                                        <div class="as-producttile-title">
+                                            <h3 class="as-producttile-name">
+                                                <p class="as-producttile-tilelink">
+                                                    <span data-ase-truncate="2">Modelo del Telefono: <?php echo $_POST['title'] ?></span>
+                                                </p>
+                                            </h3>
+                                        </div>
+                                        <h3>Precio: $<?php echo $_POST['price'] ?></h3>
+                                        <h3>Cantidad: <?php echo  $_POST['unit'] ?></h3>
+                                    </div>
+                                    <form action="mercadoPagoImp.php"  method="post" >
+                                        <input type="hidden" name="title" value="<?php echo $_POST['title'] ?>">
+                                        <input type="hidden" name="price" value="<?php echo $_POST['price'] ?>">
+                                        <input type="hidden" name="unit" value="<?php echo $_POST['unit'] ?>">
+                                        <button type="submit"  class="mercadopago-button">Pagar</button>
+                                    </form>                        
+                                    
+                                </div>
+                            </div>
                         <?php 
                             if(isset($_POST)){
                                 require __DIR__ .  '/vendor/autoload.php';
@@ -147,6 +169,9 @@
                                 $item->unit_price = $_POST['price'];
                                 $preference->items = array($item);
                                 $preference->save();
+
+                                print_r($preference);
+
                             }
                         ?>
                         <script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>"> </script>
