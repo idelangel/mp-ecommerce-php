@@ -168,6 +168,7 @@
                                 $item->unit_price = $_POST['price'];
                                 $preference->items = array($item);
                                 $preference->save();
+                                print_r($preference);
                             }
                         ?>
                         <script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>"> </script>
