@@ -158,7 +158,7 @@
                             if(isset($_POST)){
                                 require __DIR__ .  '/vendor/autoload.php';
                                 // Agrega credenciales
-                                MercadoPago\SDK::setAccessToken('TEST-6668103652013722-112616-1c1e5389529bbb4fc67b1693592baf37-197699043');
+                                MercadoPago\SDK::setAccessToken('TEST-6668103652013722-112618-0523f67da8d6e7432801a1e6469a8fcd-197699043');
                                 // Crea un objeto de preferencia
                                 $preference = new MercadoPago\Preference();
                                 // Crea un ítem en la preferencia
@@ -168,9 +168,9 @@
                                 $item->unit_price = $_POST['price'];
                                 $preference->items = array($item);
                                 $preference->save();
+                                echo '<script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js" data-preference-id="'.$preference->id.'"> </script>';
                             }
                         ?>
-                        <script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>"> </script>
                         </div>
                     </div>
                 </div>
